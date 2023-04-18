@@ -32,7 +32,7 @@ class LoggerUtils:
         formatter = logging.Formatter('%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
                                       datefmt='%Y-%m-%d %H:%M:%S')
         cls.logger.setLevel(level)
-        if (is_write_log):
+        if is_write_log:
             today = DataTimeUtils.getDay()
             year = DataTimeUtils.getTimeByPattern(DataTimeUtils.YEAR_PATTERN)
             month = DataTimeUtils.getTimeByPattern(DataTimeUtils.MONTH_PATTERN)
@@ -50,7 +50,7 @@ class LoggerUtils:
             file_handler.setFormatter(formatter)
             file_handler.setLevel(level)
             cls.logger.addHandler(file_handler)
-        if (is_print_log):
+        if is_print_log:
             ## 打印 Log 的基础设置
             console_handler = logging.StreamHandler(sys.stdout)
             console_handler.setFormatter(formatter)  # %(asctime)s

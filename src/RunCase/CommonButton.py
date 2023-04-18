@@ -1,7 +1,4 @@
-from Common.ClientBasic import *
-
-
-class CommonButton(ClientBasic):
+class CommonButton:
     """公共按钮"""
 
     @classmethod
@@ -25,21 +22,11 @@ class CommonButton(ClientBasic):
         pass
 
     @classmethod
-    def whiteComfirm(cls):
+    def white_comfirm(cls):
         """白色确认按钮"""
         pass
 
     @classmethod
-    def blueComfirm(cls):
+    def blue_comfirm(cls):
         """蓝色确认按钮"""
-        pass
-
-    @classmethod
-    def detectLimitShop(cls):
-        """检测是否开启限定商城"""
-        pass
-
-    @classmethod
-    def detectUnionBattle(cls):
-        """检测是否开启公会战页面"""
         pass

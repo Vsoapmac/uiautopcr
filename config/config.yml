@@ -8,8 +8,18 @@ shutdown_when_finish: false # 运行完毕后是否关机
 start_timer: false # 定时运行
 rerun_if_faile: 0 # 运行失败后重新运行次数
 run_model: # 运行的模块列表
-    - TestInvest
-    
+#    - 登录
+    - 任务
+    - 工会之家
+    - 商店
+    - 探索
+    - 调查
+    - 竞技场
+    - 公主竞技场
+    - 地下城
+    - 任务
+    - 礼物
+
 # 其他设置
 run_plugins: false # 运行其他插件模块(此操作不会运行run_model中的模块)
 plugins_model: # 运行的插件模块列表
