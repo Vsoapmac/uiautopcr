@@ -1,0 +1,16 @@
+# 基础设置
+# 夜神模拟器: 127.0.0.1:62025
+client_url: 127.0.0.1:62025 # 设备连接UUID或url
+log_output: false # 是否将日志写入文件
+
+# 运行设置
+shutdown_when_finish: false # 运行完毕后是否关机
+start_timer: false # 定时运行
+rerun_if_faile: 0 # 运行失败后重新运行次数
+run_model: # 运行的模块列表
+    - TestInvest
+    
+# 其他设置
+run_plugins: false # 运行其他插件模块(此操作会关闭主要的运行模块)
+plugins_model: # 运行的插件模块列表
+    - pass_map
