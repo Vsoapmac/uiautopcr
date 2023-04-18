@@ -11,6 +11,6 @@ run_model: # 运行的模块列表
     - TestInvest
     
 # 其他设置
-run_plugins: false # 运行其他插件模块(此操作会关闭主要的运行模块)
+run_plugins: false # 运行其他插件模块(此操作不会运行run_model中的模块)
 plugins_model: # 运行的插件模块列表
     - pass_map

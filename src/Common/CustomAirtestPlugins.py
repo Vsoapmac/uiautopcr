@@ -1,8 +1,7 @@
-import os
-import cv2
+import os, cv2
 from airtest.core.api import *
-from easyocr import Reader
 from airtest.aircv import *
+from easyocr import Reader
 
 
 class CustomAirtestPlugins:
@@ -132,3 +131,25 @@ class CustomAirtestPlugins:
             if text in scan_text:
                 return True
         return False
+
+    @classmethod
+    def mathInImageLimit(cls, image_path, x1, y1, x2, y2):
+        """
+        局部匹配图片
+
+        :param image_path: 目标匹配图片路径
+        :param x1: 限定区域左上角x坐标
+        :param y1: 限定区域左上角y坐标
+        :param x2: 限定区域右下角x坐标
+        :param y2: 限定区域右下角y坐标
+        :return: 该图片在设备窗口的位置
+        """
+        screen = G.DEVICE.snapshot()
+        # 局部截图
+        local_screen = aircv.crop_image(screen, (x1, y1, x2, y2))
+
+        # 将我们的目标截图设置为一个Template对象
+        tempalte = Template(image_path)
+        # 在局部截图里面查找指定的图片对象
+        pos = tempalte.match_in(local_screen)
+        return pos
