@@ -15,5 +15,6 @@ class ClientBasic:
     config_dict = YamlUtils.loadYamlFile(PathUtils.getConfigPath() + "config.yml")
     shot_path = PathUtils.getScriptShotPath()
     d = connect_device(f'Android:///{config_dict["client_url"]}')
+    w,h = d.get_current_resolution()
     LoggerUtils.setAirtestLogLevel()
     LoggerUtils.setBasicLoggingSettings(is_write_log=config_dict["log_output"])
