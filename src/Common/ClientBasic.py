@@ -1,5 +1,8 @@
 import logging, pytest
+import RunCase.PageInfo as page_info
 from airtest.core.api import *
+from RunCase.Page import Page
+from RunCase.CommonButton import CommonButton
 from Common.CustomAirtestPlugins import CustomAirtestPlugins
 from Utils.YamlUtils import YamlUtils
 from Utils.PathUtils import PathUtils

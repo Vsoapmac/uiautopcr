@@ -5,7 +5,7 @@ class YamlUtils:
     """yaml工具类"""
 
     @classmethod
-    def loadYamlFile(cls, file_path, encoding="uft-8"):
+    def loadYamlFile(cls, file_path, encoding="UTF-8"):
         """
         加载yaml文件
 
@@ -18,7 +18,7 @@ class YamlUtils:
         return load_data
 
     @classmethod
-    def dumpDataToYaml(cls, file_path, dict_data, encoding="uft-8"):
+    def dumpDataToYaml(cls, file_path, dict_data, encoding="UTF-8"):
         """
         将数据写入yaml文件
         !!!注意该方法会覆盖yaml中的全部数据!!!

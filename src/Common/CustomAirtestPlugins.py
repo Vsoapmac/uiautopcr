@@ -46,8 +46,11 @@ class CustomAirtestPlugins:
         # 删除缓存图片
         if delete_cache_image:
             os.remove(cache_image_path)
-        # 返回结果
-        return coords
+        if coords != None:
+            # 返回结果
+            return coords
+        elif coords == None:
+            raise Exception("无法识别并点击文字元素")
 
     @classmethod
     def touchByText(cls, text: str, offset_x=10, offset_y=10, delete_cache_image=True,
@@ -122,6 +125,7 @@ class CustomAirtestPlugins:
         :param y1: 裁剪框左上角y坐标
         :param x2: 裁剪框右下角x坐标
         :param y2: 裁剪框右下角y坐标
+        :param type: 坐标类型，0为相对坐标，例如:(0.5, 0.5)；1为绝对坐标，例如:(920, 1080)，默认0
         :return: 目标文字是否在特定裁剪框的画面中
         """
         scan_list = cls.scanTextsByCoord(device, x1, y1, x2, y2, type)

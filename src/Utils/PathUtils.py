@@ -13,6 +13,7 @@ class PathUtils:
         """
         parent = pathlib.Path().absolute().parent
         root = str(parent).replace("\\", "/")
+        root = root.replace("/src","")
         return root + "/"
 
     @classmethod
@@ -22,7 +23,7 @@ class PathUtils:
 
         :return: config文件夹绝对路径
         """
-        root = cls.getProjectRootPath()
+        root = cls.getRootPath()
         return root + "config/"
 
     @classmethod
@@ -32,7 +33,7 @@ class PathUtils:
 
         :return: output文件夹绝对路径
         """
-        root = cls.getProjectRootPath()
+        root = cls.getRootPath()
         return root + "output/"
 
     @classmethod
@@ -42,7 +43,7 @@ class PathUtils:
 
         :return: resources文件夹绝对路径
         """
-        root = cls.getProjectRootPath()
+        root = cls.getRootPath()
         return root + "resources/"
 
     @classmethod
@@ -62,7 +63,7 @@ class PathUtils:
 
         :return: RunCase文件夹绝对路径
         """
-        root = cls.getProjectRootPath()
+        root = cls.getRootPath()
         return root + "src/RunCase/"
 
     @classmethod
@@ -72,5 +73,5 @@ class PathUtils:
 
         :return: Plugins文件夹绝对路径
         """
-        root = cls.getProjectRootPath()
+        root = cls.getRootPath()
         return root + "src/Plugins/"

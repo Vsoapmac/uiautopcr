@@ -13,6 +13,7 @@ common_button_dict = {
 page_dict = {
     "main": "main_page.png",  # 我的主页
     "mission": "mission_page.png",  # 任务
+    "gift": "gift_page.png",  # 任务
     "shop": "shop_page.png",  # 商店
     "union": "union_page.png",  # 行会
     "adventure": "adventure_page.png",  # 冒险
@@ -51,13 +52,13 @@ search_dict = {
 
 # 调查
 invest_dict = {
-    "": "temple_page.png",
-    "": "miracle_page.png",
-    "": "miracle_survey_level_one.png",
-    "": "miracle_survey_level_two.png",
-    "": "miracle_survey_level_three.png",
-    "": "temple_survey_level_one.png",
-    "": "temple_survey_level_two.png",
+    "temple": "temple_page.png", # 神殿调查
+    "miracle": "miracle_page.png", # 圣迹调查
+    "miracle_survey_level_one": "miracle_survey_level_one.png", # 圣迹调查关卡1级
+    "miracle_survey_level_two": "miracle_survey_level_two.png", # 圣迹调查关卡2级
+    "miracle_survey_level_three": "miracle_survey_level_three.png", # 圣迹调查关卡3级
+    "temple_survey_level_one": "temple_survey_level_one.png", # 神殿调查关卡1级
+    "temple_survey_level_two": "temple_survey_level_two.png", # 神殿调查关卡2级
 }
 
 # 竞技场
