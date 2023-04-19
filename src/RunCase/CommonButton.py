@@ -21,7 +21,7 @@ class CommonButton:
     @classmethod
     def cancel(cls):
         """取消"""
-        touch(Template(cls.__shot_path+cls.__page_dict["main"], record_pos=(-0.114, 0.216), resolution=(1280, 720))) # 取消
+        touch(Template(cls.__shot_path+cls.__page_dict["cancel"], record_pos=(-0.114, 0.216), resolution=(1280, 720))) # 取消
 
     @classmethod
     def close(cls):

@@ -3,6 +3,7 @@ import pathlib
 
 class PathUtils:
     """文件目录工具类"""
+    __project_name = "uiautopcr"
 
     @classmethod
     def getRootPath(cls):
@@ -13,7 +14,7 @@ class PathUtils:
         """
         parent = pathlib.Path().absolute().parent
         root = str(parent).replace("\\", "/")
-        root = root.replace("/src","")
+        root = root[0:root.find(cls.__project_name)+len(cls.__project_name)] # 切割到项目根目录
         return root + "/"
 
     @classmethod

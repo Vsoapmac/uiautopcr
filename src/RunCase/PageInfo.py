@@ -44,16 +44,18 @@ shop_dict = {
 
 # 探索
 search_dict = {
-    "": "experience_page.png",
-    "": "mana_page.png",
-    "": "mana_page.png",
-    "": "mana_page.png",
+    "experience": "experience_page.png", # 经验值关卡
+    "mana": "mana_page.png", # mana关卡
+    "plus": "plus.png", # +号
+    "use_two_tickets": "use_two_tickets.png", # 使用2张
 }
 
 # 调查
 invest_dict = {
     "temple": "temple_page.png", # 神殿调查
     "miracle": "miracle_page.png", # 圣迹调查
+    "plus": "plus.png", # +号
+    "use_five_tickets": "use_five_tickets.png", # 使用5张
     "miracle_survey_level_one": "miracle_survey_level_one.png", # 圣迹调查关卡1级
     "miracle_survey_level_two": "miracle_survey_level_two.png", # 圣迹调查关卡2级
     "miracle_survey_level_three": "miracle_survey_level_three.png", # 圣迹调查关卡3级
