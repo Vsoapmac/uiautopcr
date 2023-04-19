@@ -118,13 +118,30 @@ class Page:
         sleep(2)
 
     @classmethod
-    def detect_limit_shop_open(cls, option):
+    def detect_limit_shop_open(cls, option="buy_all"):
         """
         检测是否开启限定商城
 
         :param option: 开启限定商城后的操作
         """
-        pass
+        try:
+            wait(Template(cls.__shot_path+page_info.shop_dict["limit_shop_open"], record_pos=(-0.01, -0.193), resolution=(1280, 720)),timeout=2) # 限定商店开启
+            if option == "buy_all":
+                touch(Template(cls.__shot_path+page_info.shop_dict["click_all_limit_shop"], record_pos=(0.183, -0.152), resolution=(1280, 720))) # 点击全部
+                sleep(1)
+                touch(Template(cls.__shot_path+page_info.shop_dict["chose_all_limit_shop"], record_pos=(0.395, -0.151), resolution=(1280, 720))) # 点击全选
+                sleep(1)
+                touch(Template(cls.__shot_path+page_info.shop_dict["buy_all_by_one_click"], record_pos=(0.353, 0.213), resolution=(1280, 720))) # 一键购买
+                sleep(1)
+                touch(Template(cls.__shot_path+page_info.common_button_dict["blue_comfirm"], record_pos=(0.114, 0.103), resolution=(1280, 720))) # 蓝色确认按钮
+                sleep(3)
+                touch(Template(cls.__shot_path+page_info.common_button_dict["blue_comfirm"], record_pos=(0.114, 0.103), resolution=(1280, 720))) # 蓝色确认按钮
+                sleep(3)
+                touch(Template(cls.__shot_path+page_info.common_button_dict["cancel"], record_pos=(-0.114, 0.216), resolution=(1280, 720))) # 取消
+            sleep(2)
+        except:
+            pass
+
 
     @classmethod
     def detect_union_battle_open(cls):
