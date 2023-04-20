@@ -86,3 +86,4 @@ class TestSearch(ClientBasic):
             """
             CommonButton.cancel()
             sleep(1)
+

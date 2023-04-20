@@ -3,7 +3,7 @@
 # 夜神模拟器: 127.0.0.1:62025
 # mumu模拟器: 127.0.0.1:7555
 project_name: uiautopcr
-client_url: 10ACAU0MQX001UX # 设备连接UUID或url
+client_url: 127.0.0.1:62025 # 设备连接UUID或url
 log_output: false # 是否将日志写入文件
 
 # 运行设置

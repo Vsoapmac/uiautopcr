@@ -16,7 +16,8 @@ class CommonButton:
     @classmethod
     def back(cls):
         """返回"""
-        pass
+        touch(Template(r"tpl1681996727065.png", record_pos=(-0.468, -0.248), resolution=(1280, 720))) # 返回
+
 
     @classmethod
     def cancel(cls):
