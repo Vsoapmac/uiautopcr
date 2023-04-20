@@ -1,1 +1,1 @@
-conda activate python39 & cd src/ & python -m main
+cd src/ & python -m main

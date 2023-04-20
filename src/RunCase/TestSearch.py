@@ -20,31 +20,69 @@ class TestSearch(ClientBasic):
     @pytest.fixture
     def experience_page(self):
         """经验值关卡"""
-        touch(Template(r"experience_potion.png", record_pos=(0.071, -0.13), resolution=(1280, 720))) # 经验值药水
-
+        is_in_page = True
         try:
-            wait(Template(self.shot_path + self.__page_dict["experience"], record_pos=(0.109, 0.065),
-                           resolution=(1280, 720)), timeout=2)
+            wait(Template(self.shot_path + self.__page_dict["experience_potion"], record_pos=(0.071, -0.13),
+                          resolution=(1280, 720), threshold=0.9), timeout=2)  # 经验值药水
+            is_in_page = False
         except:
-            Page.search_page()
-        touch(Template(self.shot_path + self.__page_dict["experience"], record_pos=(0.109, 0.065),
+            pass
+        if is_in_page:
+            try:
+                wait(Template(self.shot_path + self.__page_dict["experience"], record_pos=(0.109, 0.065),
+                              resolution=(1280, 720), threshold=0.9), timeout=2)  # 经验值关卡
+            except:
+                Page.search_page()
+            touch(Template(self.shot_path + self.__page_dict["experience"], record_pos=(0.109, 0.065),
                            resolution=(1280, 720)))  # 经验值关卡
-        sleep(2)
+            sleep(2)
 
     @pytest.fixture
     def mana_page(self):
-        touch(Template(r"mana_potion.png", record_pos=(0.07, -0.127), resolution=(1280, 720))) # mana药水
-
+        is_in_page = True
         try:
-            wait(Template(self.shot_path + self.__page_dict["mana"], record_pos=(0.34, 0.064),
-                       resolution=(1280, 720)), timeout=2)
+            wait(Template(self.shot_path + self.__page_dict["mana_potion"], record_pos=(0.07, -0.127),
+                          resolution=(1280, 720), threshold=0.9), timeout=2)  # mana药水
+            is_in_page = False
         except:
-            Page.search_page()
-        touch(Template(self.shot_path + self.__page_dict["mana"], record_pos=(0.34, 0.064),
-                       resolution=(1280, 720)))  # mana关卡
-        sleep(2)
+            pass
+        if is_in_page:
+            try:
+                wait(Template(self.shot_path + self.__page_dict["mana"], record_pos=(0.34, 0.064),
+                              resolution=(1280, 720), threshold=0.9), timeout=2)
+            except:
+                Page.search_page()
+            touch(Template(self.shot_path + self.__page_dict["mana"], record_pos=(0.34, 0.064),
+                           resolution=(1280, 720)))  # mana关卡
+            sleep(2)
 
     def __start_search(self):
         """使用扫荡券扫荡"""
-        touch(Template(r"use_two_tickets.png", record_pos=(0.284, 0.065), resolution=(1280, 720))) # 使用2张
+        touch(Template(self.shot_path + self.__page_dict["use_two_tickets"], record_pos=(0.284, 0.065),
+                       resolution=(1280, 720)))  # 使用2张
         sleep(2)
+        # 检查是否剩余次数
+        has_remain = True
+        try:
+            CommonButton.blue_comfirm()
+        except:
+            has_remain = False
+        """
+        有次数则正常扫荡
+        """
+        if has_remain:
+            # 开始扫荡
+            try:
+                touch(Template(self.shot_path + self.__page_dict["skip_and_finish"], record_pos=(0.001, 0.216),
+                               resolution=(1280, 720)))  # 跳过完毕
+            except:
+                pass
+            # 正常扫荡
+            # TODO:增加三种情况，返回探索主页、进入经验值关卡、进入mana关卡
+            sleep(1)
+        else:
+            """
+            没有次数则跳过
+            """
+            CommonButton.cancel()
+            sleep(1)

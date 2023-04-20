@@ -12,13 +12,13 @@ class Page:
     def main_page(cls):
         """主页"""
         try:
-            wait(Template(cls.__shot_path + cls.__page_dict["gift"], record_pos=(0.448, 0.177), resolution=(1280, 720)),
+            wait(Template(cls.__shot_path + cls.__page_dict["gift"], record_pos=(0.448, 0.177), resolution=(1280, 720), threshold=0.9),
                  timeout=2)
-            wait(Template(cls.__shot_path + cls.__page_dict["shop"], record_pos=(0.142, 0.175), resolution=(1280, 720)),
+            wait(Template(cls.__shot_path + cls.__page_dict["shop"], record_pos=(0.142, 0.175), resolution=(1280, 720), threshold=0.9),
                  timeout=2)
-            wait(Template(cls.__shot_path + cls.__page_dict["union"], record_pos=(0.22, 0.174), resolution=(1280, 720)),
+            wait(Template(cls.__shot_path + cls.__page_dict["union"], record_pos=(0.22, 0.174), resolution=(1280, 720), threshold=0.9),
                 timeout=2)
-            wait(Template(cls.__shot_path + cls.__page_dict["mission"], record_pos=(0.371, 0.175), resolution=(1280, 720)),
+            wait(Template(cls.__shot_path + cls.__page_dict["mission"], record_pos=(0.371, 0.175), resolution=(1280, 720), threshold=0.9),
                  timeout=2)
         except:
             # 重置状态
@@ -65,16 +65,13 @@ class Page:
     def adventure_page(cls):
         """冒险"""
         try:
-            wait(Template(cls.__shot_path + cls.__page_dict["search"], record_pos=(0.266, -0.094),
-                          resolution=(1280, 720)),
+            wait(Template(cls.__shot_path + cls.__page_dict["search"], record_pos=(0.266, -0.094), resolution=(1280, 720), threshold=0.9),
                  timeout=2)
-            wait(Template(cls.__shot_path + cls.__page_dict["arana"], record_pos=(0.105, 0.168), resolution=(1280, 720)),
+            wait(Template(cls.__shot_path + cls.__page_dict["arana"], record_pos=(0.105, 0.168), resolution=(1280, 720), threshold=0.9),
                  timeout=2)
-            wait(
-                Template(cls.__shot_path + cls.__page_dict["princess_arana"], record_pos=(0.36, 0.166), resolution=(1280, 720)),
+            wait(Template(cls.__shot_path + cls.__page_dict["princess_arana"], record_pos=(0.36, 0.166), resolution=(1280, 720), threshold=0.9),
                 timeout=2)
-            wait(Template(cls.__shot_path + cls.__page_dict["invest"], record_pos=(0.267, 0.05),
-                          resolution=(1280, 720)),
+            wait(Template(cls.__shot_path + cls.__page_dict["invest"], record_pos=(0.267, 0.05),resolution=(1280, 720), threshold=0.9),
                  timeout=2)
         except:
             # 重置状态
@@ -125,11 +122,11 @@ class Page:
         :param option: 开启限定商城后的操作
         """
         try:
-            wait(Template(cls.__shot_path+page_info.shop_dict["limit_shop_open"], record_pos=(-0.01, -0.193), resolution=(1280, 720)),timeout=2) # 限定商店开启
+            wait(Template(cls.__shot_path+page_info.shop_dict["limit_shop_open"], record_pos=(-0.01, -0.193), resolution=(1280, 720), threshold=0.9),timeout=2) # 限定商店开启
             if option == "buy_all":
-                touch(Template(cls.__shot_path+page_info.shop_dict["click_all_limit_shop"], record_pos=(0.183, -0.152), resolution=(1280, 720))) # 点击全部
+                touch(Template(cls.__shot_path+page_info.shop_dict["click_all_limit_shop"], record_pos=(0.183, -0.152), resolution=(1280, 720), threshold=0.9)) # 点击全部
                 sleep(1)
-                touch(Template(cls.__shot_path+page_info.shop_dict["chose_all_limit_shop"], record_pos=(0.395, -0.151), resolution=(1280, 720))) # 点击全选
+                touch(Template(cls.__shot_path+page_info.shop_dict["chose_all_limit_shop"], record_pos=(0.395, -0.151), resolution=(1280, 720), threshold=0.9)) # 点击全选
                 sleep(1)
                 touch(Template(cls.__shot_path+page_info.shop_dict["buy_all_by_one_click"], record_pos=(0.353, 0.213), resolution=(1280, 720))) # 一键购买
                 sleep(1)

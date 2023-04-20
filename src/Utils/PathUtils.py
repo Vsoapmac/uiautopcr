@@ -1,9 +1,9 @@
 import pathlib
+from Utils.YamlUtils import YamlUtils
 
 
 class PathUtils:
     """文件目录工具类"""
-    __project_name = "uiautopcr"
 
     @classmethod
     def getRootPath(cls):
@@ -12,9 +12,13 @@ class PathUtils:
         
         :return: 项目根目录绝对路径
         """
+        # 获取project_name
+        load_dict = YamlUtils.loadYamlFile(cls.getConfigPath() + "config.yml")
+        project_name = YamlUtils.getValue(load_dict,"project_name")
+        # 获取根目录
         parent = pathlib.Path().absolute().parent
         root = str(parent).replace("\\", "/")
-        root = root[0:root.find(cls.__project_name)+len(cls.__project_name)] # 切割到项目根目录
+        root = root[0:root.find(project_name)+len(project_name)] # 不同未知的py文件的父目录是不同的，预防这个情况切割字符串拿到项目根目录
         return root + "/"
 
     @classmethod

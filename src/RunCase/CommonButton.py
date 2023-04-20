@@ -21,7 +21,7 @@ class CommonButton:
     @classmethod
     def cancel(cls):
         """取消"""
-        touch(Template(cls.__shot_path+cls.__page_dict["cancel"], record_pos=(-0.114, 0.216), resolution=(1280, 720))) # 取消
+        touch(Template(cls.__shot_path+cls.__page_dict["cancel"], record_pos=(-0.114, 0.216), resolution=(1280, 720), threshold=0.9)) # 取消
 
     @classmethod
     def close(cls):
@@ -31,10 +31,10 @@ class CommonButton:
     @classmethod
     def white_comfirm(cls):
         """白色确认按钮"""
-        touch(Template(cls.__shot_path+cls.__page_dict["white_comfirm"], record_pos=(-0.001, 0.216), resolution=(1280, 720))) # 白色确认按钮
+        touch(Template(cls.__shot_path+cls.__page_dict["white_comfirm"], record_pos=(-0.001, 0.216), resolution=(1280, 720), threshold=0.9)) # 白色确认按钮
 
 
     @classmethod
     def blue_comfirm(cls):
         """蓝色确认按钮"""
-        touch(Template(cls.__shot_path+cls.__page_dict["blue_comfirm"], record_pos=(0.114, 0.103), resolution=(1280, 720))) # 蓝色确认按钮
+        touch(Template(cls.__shot_path+cls.__page_dict["blue_comfirm"], record_pos=(0.114, 0.103), resolution=(1280, 720), threshold=0.9)) # 蓝色确认按钮
