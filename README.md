@@ -41,7 +41,7 @@
 
 部署流程如下:
 
-1. 下载项目，将项目命名为uiautopcr(**注意这很重要**)，可以在Utils包中的
+1. 下载项目，将项目命名为uiautopcr(**注意这很重要**)
 2. 安装anaconda3或miniconda(python环境也行)
 3. 使用指令`conda create -n uiautopcr python==3.9.16`创建conda环境(若直接安装python的用户则直接忽略这一步)
 4. 使用指令`conda activate uiautopcr`激活conda环境(若直接安装python的用户则直接忽略这一步)
