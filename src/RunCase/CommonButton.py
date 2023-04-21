@@ -18,7 +18,6 @@ class CommonButton:
         """返回"""
         touch(Template(cls.__shot_path+cls.__page_dict["back"], record_pos=(-0.468, -0.248), resolution=(1280, 720))) # 返回
 
-
     @classmethod
     def cancel(cls):
         """取消"""

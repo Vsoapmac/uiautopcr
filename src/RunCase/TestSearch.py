@@ -39,6 +39,7 @@ class TestSearch(ClientBasic):
 
     @pytest.fixture
     def mana_page(self):
+        """玛娜"""
         is_in_page = True
         try:
             wait(Template(self.shot_path + self.__page_dict["mana_potion"], record_pos=(0.07, -0.127),
