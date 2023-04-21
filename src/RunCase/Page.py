@@ -22,10 +22,9 @@ class Page:
                  timeout=2)
         except:
             # 重置状态
-            # TODO:使用其他页面重置状态
+            touch(Template(cls.__shot_path + cls.__page_dict["main_menu"], record_pos=(0.409, 0.264), resolution=(1280, 720))) # 主菜单
             sleep(3)
-            touch(Template(cls.__shot_path + cls.__page_dict["main"], record_pos=(-0.407, 0.266),
-                           resolution=(1280, 720)))  # 我的主页
+            touch(Template(cls.__shot_path + cls.__page_dict["main"], record_pos=(-0.407, 0.266), resolution=(1280, 720)))  # 我的主页
             sleep(3)
         """
         为了保证容错再检查一次
@@ -66,7 +65,23 @@ class Page:
         touch(Template(cls.__shot_path + cls.__page_dict["union"], record_pos=(0.22, 0.174),
                        resolution=(1280, 720)))  # 行会
         sleep(3)
-
+    
+    @classmethod
+    def department_page(cls):
+        """公会之家"""
+        # 检测是否在公会之家页面
+        try:
+            wait(Template(cls.__shot_path + page_info.department_dict["deparment_level_2"], record_pos=(-0.438, -0.141),
+                           resolution=(1280, 720)),timeout=2)  # 2层
+            wait(Template(cls.__shot_path + page_info.department_dict["deparment_level_3"], record_pos=(-0.438, -0.191),
+                           resolution=(1280, 720)),timeout=2)  # 3层
+        except:
+            touch(Template(cls.__shot_path + cls.__page_dict["department"], record_pos=(0.148, 0.265), resolution=(1280, 720))) # 公会之家
+            # 等待公会之家进入完毕
+            wait(Template(cls.__shot_path + cls.__page_dict["main"], record_pos=(-0.407, 0.266),
+                               resolution=(1280, 720)))  # 我的主页
+            sleep(3)
+    
     @classmethod
     def adventure_page(cls):
         """冒险"""
@@ -81,7 +96,7 @@ class Page:
                  timeout=2)
         except:
             # 重置状态
-            # TODO:使用其他页面重置状态
+            touch(Template(cls.__shot_path + cls.__page_dict["main_menu"], record_pos=(0.409, 0.264), resolution=(1280, 720))) # 主菜单
             sleep(3)
             touch(Template(cls.__shot_path + cls.__page_dict["adventure"], record_pos=(-0.002, 0.264),
                            resolution=(1280, 720)))  # 冒险

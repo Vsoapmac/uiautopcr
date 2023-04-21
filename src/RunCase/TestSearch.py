@@ -78,8 +78,25 @@ class TestSearch(ClientBasic):
                                resolution=(1280, 720)))  # 跳过完毕
             except:
                 pass
-            # 正常扫荡
-            # TODO:增加三种情况，返回探索主页、进入经验值关卡、进入mana关卡
+            # 结束扫荡，结果处理
+            # 前往玛娜关卡(优先)
+            try:
+                wait(Template(self.shot_path + self.__page_dict["going_to_mana_page"], record_pos=(-0.001, 0.218), resolution=(1280, 720), threshold=0.9), timeout=2) # 前往玛娜关卡
+                touch(Template(self.shot_path + self.__page_dict["going_to_mana_page"], record_pos=(-0.001, 0.218), resolution=(1280, 720), threshold=0.9)) # 前往玛娜关卡
+            except:
+                pass
+            # 进入探索首页(其次)
+            try:
+                wait(Template(self.shot_path + self.__page_dict["going_to_experience_page"], record_pos=(-0.001, 0.216), resolution=(1280, 720), threshold=0.9), timeout=2) # 进入探索首页
+                touch(Template(self.shot_path + self.__page_dict["going_to_experience_page"], record_pos=(-0.001, 0.216), resolution=(1280, 720), threshold=0.9)) # 进入探索首页
+            except:
+                pass
+            # TODO:增加进入经验值关卡情况
+            # 进入经验值关卡(最后)
+            try:
+                pass
+            except:
+                pass
             sleep(1)
         else:
             """

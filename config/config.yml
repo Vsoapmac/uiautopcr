@@ -2,7 +2,7 @@
 # 真机: UUID。如: 10ACAU0MQX001UX (一般是5037端口，其他也行，能连上手机就行)
 # 夜神模拟器: 127.0.0.1:62025
 # mumu模拟器: 127.0.0.1:7555
-client_url: 10ACAU0MQX001UX # 设备连接UUID或url
+client_url: 127.0.0.1:62025 # 设备连接UUID或url
 log_output: false # 是否将日志写入文件
 
 # 运行设置

@@ -11,7 +11,7 @@ class CommonButton:
     @classmethod
     def next(cls):
         """下一步"""
-        pass
+        touch(Template(cls.__shot_path+cls.__page_dict["next"], record_pos=(0.351, 0.23), resolution=(1280, 720))) # 下一步
 
     @classmethod
     def back(cls):
@@ -26,7 +26,7 @@ class CommonButton:
     @classmethod
     def close(cls):
         """关闭"""
-        pass
+        touch(Template(cls.__shot_path+cls.__page_dict["close"], threshold=0.9, record_pos=(0.0, 0.218), resolution=(1280, 720))) # 关闭
 
     @classmethod
     def white_comfirm(cls):
@@ -42,3 +42,4 @@ class CommonButton:
     def start_battle(cls):
         """战斗开始"""
         touch(Template(cls.__shot_path+cls.__page_dict["start_battle"], record_pos=(0.373, 0.191), resolution=(1280, 720)))  # 战斗开始
+

@@ -70,10 +70,8 @@ class TestInvest(ClientBasic):
         if not is_in_page:
             # 做一个稳定性检测，在调查页面里面就直接进去
             try:
-                wait(Template(self.shot_path + self.__page_dict["miracle"], record_pos=(0.11, 0.065),
-                              resolution=(1280, 720), threshold=0.9), timeout=2)  # 圣迹调查
-                wait(Template(self.shot_path + self.__page_dict["temple"], record_pos=(0.341, 0.064),
-                              resolution=(1280, 720), threshold=0.9), timeout=2)  # 神殿调查
+                wait(Template(self.shot_path + self.__page_dict["miracle"], record_pos=(0.11, 0.065), resolution=(1280, 720), threshold=0.9), timeout=2)  # 圣迹调查
+                wait(Template(self.shot_path + self.__page_dict["temple"], record_pos=(0.341, 0.064), resolution=(1280, 720), threshold=0.9), timeout=2)  # 神殿调查
             except:
                 Page.invest_page()  # 否则进入调查页面，再进去
             touch(Template(self.shot_path + self.__page_dict["temple"], record_pos=(0.341, 0.064),

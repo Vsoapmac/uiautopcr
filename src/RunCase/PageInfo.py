@@ -23,6 +23,7 @@ page_dict = {
     "arana": "arana_page.png",  # 竞技场
     "princess_arana": "princess_arana_page.png",  # 公主竞技场
     "department": "department_page.png",  # 公会之家
+    "main_menu": "main_menu.png",  # 主菜单
     "dungeons": "dungeons_page.png",  # 地下城
 }
 
@@ -38,6 +39,9 @@ department_dict = {
 # 任务
 mission_dict = {
     "mission_tag": "mission_tag.png",  # 任务标签
+    "common_mission": "common_mission.png",  # 普通
+    "daily_mission": "daily_mission.png",  # 每日
+    "name_mission": "name_mission.png",  # 称号
     "collect_all_mission_reward": "collect_all_mission_reward.png",  # 全部收取
 }
 
@@ -68,6 +72,8 @@ search_dict = {
     "mana_potion": "mana_potion.png", # mana药水
     "use_two_tickets": "use_two_tickets.png",  # 使用2张
     "skip_and_finish": "skip_and_finish.png",  # 跳过完毕
+    "going_to_mana_page": "going_to_mana_page.png",  # 跳过完毕
+    "going_to_experience_page": "going_to_experience_page.png",  # 跳过完毕
 }
 
 # 调查
@@ -89,7 +95,10 @@ invest_dict = {
 
 # 竞技场、公主竞技场
 arana_dict = {
+    "arana_tag": "arana_tag.png", # 竞技场标签
+    "pricess_arana_tag": "pricess_arana_tag.png", # 公主竞技场标签
     "colloct_arana_coin": "colloct_arana_coin.png", # 收取
+    "target_in_coding": "target_in_coding.png", # 目标处于冷却时间
     "arana_battle_history": "arana_battle_history.png", # 对战覆历(竞技场)
     "arana_defend_setting": "arana_defend_setting.png", # 防守设定(竞技场)
     "pricess_arana_battle_history": "pricess_arana_battle_history.png", # 对战覆历(公主竞技场)
