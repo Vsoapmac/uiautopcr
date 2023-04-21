@@ -13,8 +13,7 @@ class PathUtils:
         :return: 项目根目录绝对路径
         """
         # 获取project_name
-        load_dict = YamlUtils.loadYamlFile(cls.getConfigPath() + "config.yml")
-        project_name = YamlUtils.getValue(load_dict,"project_name")
+        project_name = "uiautopcr"
         # 获取根目录
         parent = pathlib.Path().absolute().parent
         root = str(parent).replace("\\", "/")

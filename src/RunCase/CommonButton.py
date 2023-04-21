@@ -16,7 +16,7 @@ class CommonButton:
     @classmethod
     def back(cls):
         """返回"""
-        touch(Template(r"tpl1681996727065.png", record_pos=(-0.468, -0.248), resolution=(1280, 720))) # 返回
+        touch(Template(cls.__shot_path+cls.__page_dict["back"], record_pos=(-0.468, -0.248), resolution=(1280, 720))) # 返回
 
 
     @classmethod
@@ -34,8 +34,12 @@ class CommonButton:
         """白色确认按钮"""
         touch(Template(cls.__shot_path+cls.__page_dict["white_comfirm"], record_pos=(-0.001, 0.216), resolution=(1280, 720), threshold=0.9)) # 白色确认按钮
 
-
     @classmethod
     def blue_comfirm(cls):
         """蓝色确认按钮"""
         touch(Template(cls.__shot_path+cls.__page_dict["blue_comfirm"], record_pos=(0.114, 0.103), resolution=(1280, 720), threshold=0.9)) # 蓝色确认按钮
+
+    @classmethod
+    def start_battle(cls):
+        """战斗开始"""
+        touch(Template(cls.__shot_path+cls.__page_dict["start_battle"], record_pos=(0.373, 0.191), resolution=(1280, 720)))  # 战斗开始

@@ -22,12 +22,18 @@ class Page:
                  timeout=2)
         except:
             # 重置状态
-            touch(Template(cls.__shot_path + cls.__page_dict["adventure"], record_pos=(-0.002, 0.264),
-                           resolution=(1280, 720)))  # 冒险
-            sleep(2)
+            # TODO:使用其他页面重置状态
+            sleep(3)
             touch(Template(cls.__shot_path + cls.__page_dict["main"], record_pos=(-0.407, 0.266),
                            resolution=(1280, 720)))  # 我的主页
-            sleep(2)
+            sleep(3)
+        """
+        为了保证容错再检查一次
+        """
+        if exists(Template(cls.__shot_path + cls.__page_dict["mission"], record_pos=(0.371, 0.175), resolution=(1280, 720), threshold=0.9)) == False:
+            touch(Template(cls.__shot_path + cls.__page_dict["main"], record_pos=(-0.407, 0.266),
+                           resolution=(1280, 720)))  # 我的主页
+            sleep(3)
 
     @classmethod
     def mission_page(cls):
@@ -35,7 +41,7 @@ class Page:
         cls.main_page()
         touch(Template(cls.__shot_path + cls.__page_dict["mission"], record_pos=(0.371, 0.175),
                        resolution=(1280, 720)))  # 任务
-        sleep(2)
+        sleep(3)
 
     @classmethod
     def gift_page(cls):
@@ -43,7 +49,7 @@ class Page:
         cls.main_page()
         touch(Template(cls.__shot_path + cls.__page_dict["gift"], record_pos=(0.448, 0.177),
                        resolution=(1280, 720)))  # 礼物
-        sleep(2)
+        sleep(3)
 
     @classmethod
     def shop_page(cls):
@@ -51,7 +57,7 @@ class Page:
         cls.main_page()
         touch(Template(cls.__shot_path + cls.__page_dict["shop"], record_pos=(0.142, 0.175),
                        resolution=(1280, 720)))  # 商店
-        sleep(2)
+        sleep(3)
 
     @classmethod
     def union_page(cls):
@@ -59,7 +65,7 @@ class Page:
         cls.main_page()
         touch(Template(cls.__shot_path + cls.__page_dict["union"], record_pos=(0.22, 0.174),
                        resolution=(1280, 720)))  # 行会
-        sleep(2)
+        sleep(3)
 
     @classmethod
     def adventure_page(cls):
@@ -75,12 +81,18 @@ class Page:
                  timeout=2)
         except:
             # 重置状态
-            touch(Template(cls.__shot_path + cls.__page_dict["main"], record_pos=(-0.407, 0.266),
-                           resolution=(1280, 720)))  # 我的主页
-            sleep(2)
+            # TODO:使用其他页面重置状态
+            sleep(3)
             touch(Template(cls.__shot_path + cls.__page_dict["adventure"], record_pos=(-0.002, 0.264),
                            resolution=(1280, 720)))  # 冒险
-            sleep(2)
+            sleep(3)
+        """
+        为了保证容错再检查一次
+        """
+        if exists(Template(cls.__shot_path + cls.__page_dict["search"], record_pos=(0.266, -0.094), resolution=(1280, 720), threshold=0.9)) == False:
+            touch(Template(cls.__shot_path + cls.__page_dict["adventure"], record_pos=(-0.002, 0.264),
+                           resolution=(1280, 720)))  # 冒险
+            sleep(3)
 
     @classmethod
     def invest_page(cls):
@@ -88,7 +100,7 @@ class Page:
         cls.adventure_page()
         touch(Template(cls.__shot_path + cls.__page_dict["invest"], record_pos=(0.267, 0.05),
                        resolution=(1280, 720)))  # 调查
-        sleep(2)
+        sleep(3)
 
     @classmethod
     def search_page(cls):
@@ -96,7 +108,7 @@ class Page:
         cls.adventure_page()
         touch(Template(cls.__shot_path + cls.__page_dict["search"], record_pos=(0.266, -0.094),
                        resolution=(1280, 720)))  # 探索
-        sleep(2)
+        sleep(3)
 
     @classmethod
     def arana_page(cls):
@@ -104,7 +116,7 @@ class Page:
         cls.adventure_page()
         touch(Template(cls.__shot_path + cls.__page_dict["arana"], record_pos=(0.105, 0.168),
                        resolution=(1280, 720)))  # 战斗竞技场
-        sleep(2)
+        sleep(3)
 
     @classmethod
     def princess_arana_page(cls):
@@ -112,7 +124,7 @@ class Page:
         cls.adventure_page()
         touch(Template(cls.__shot_path + cls.__page_dict["princess_arana"], record_pos=(0.36, 0.166),
                        resolution=(1280, 720)))  # 公主竞技场
-        sleep(2)
+        sleep(3)
 
     @classmethod
     def detect_limit_shop_open(cls, option="buy_all"):
@@ -135,7 +147,7 @@ class Page:
                 touch(Template(cls.__shot_path+page_info.common_button_dict["blue_comfirm"], record_pos=(0.114, 0.103), resolution=(1280, 720))) # 蓝色确认按钮
                 sleep(3)
                 touch(Template(cls.__shot_path+page_info.common_button_dict["cancel"], record_pos=(-0.114, 0.216), resolution=(1280, 720))) # 取消
-            sleep(2)
+            sleep(3)
         except:
             pass
 

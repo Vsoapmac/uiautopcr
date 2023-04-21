@@ -5,6 +5,7 @@ common_button_dict = {
     "cancel": "cancel.png",  # 取消
     "close": "close.png",  # 关闭
     "skip": "skip.png",  # 跳过
+    "start_battle": "start_battle.png", # 战斗开始
     "white_comfirm": "white_comfirm.png",  # 白色确认按钮
     "blue_comfirm": "blue_comfirm.png",  # 蓝色确认按钮
 }
@@ -29,12 +30,21 @@ page_dict = {
 
 # 公会之家
 department_dict = {
-    "collect_all": "collect_all_deparment_strength.png",  # 全部收取
+    "collect_all_deparment_strength": "collect_all_deparment_strength.png",  # 全部收取
+    "deparment_level_2": "deparment_level_2.png",  # 全部收取
+    "deparment_level_3": "deparment_level_3.png",  # 全部收取
 }
 
 # 任务
 mission_dict = {
+    "mission_tag": "mission_tag.png",  # 任务标签
+    "collect_all_mission_reward": "collect_all_mission_reward.png",  # 全部收取
+}
 
+# 礼物
+gift_dict = {
+    "cancel_check_with_gift_energy": "cancel_check_with_gift_energy.png",  # 取消勾选
+    "collect_all_mission_reward": "collect_all_mission_reward.png",  # 全部收取
 }
 
 # 商店
@@ -42,7 +52,12 @@ shop_dict = {
     "limit_shop_open": "limit_shop_open.png",  # 限定商店是否开启
     "click_all_limit_shop": "click_all_limit_shop.png",  # 点击全部
     "chose_all_limit_shop": "chose_all_limit_shop.png",  # 点击全选
-    "buy_all_by_one_click": "buy_all_by_one_click.png",  # 点击全选
+    "buy_all_by_one_click": "buy_all_by_one_click.png",  # 一键购买
+    "experience_potion_shop": "experience_potion_shop.png",  # 药剂
+    "refine_stone_shop": "refine_stone_shop.png",  # 精炼石
+    "select_all_goods": "select_all_goods.png",  # 全部
+    "chose_all_goods": "chose_all_goods.png",  # 全选
+    "buy_batch_goods": "buy_batch_goods.png",  # 批量购入
 }
 
 # 探索
@@ -59,6 +74,8 @@ search_dict = {
 invest_dict = {
     "temple": "temple_page.png",  # 神殿调查
     "miracle": "miracle_page.png",  # 圣迹调查
+    "piece_of_heart": "piece_of_heart.png",  # 心碎图片
+    "cup_of_stars": "cup_of_stars.png",  # 圣迹调查
     "plus": "plus.png",  # +号
     "use_five_tickets": "use_five_tickets.png",  # 使用5张
     "skip_and_finish": "skip_and_finish.png",  # 跳过完毕
@@ -70,14 +87,15 @@ invest_dict = {
     "temple_survey_level_two": "temple_survey_level_two.png",  # 神殿调查关卡2级
 }
 
-# 竞技场
+# 竞技场、公主竞技场
 arana_dict = {
-    "": "colloct_arana_coin.png"
-}
-
-# 公主竞技场
-princess_arana_dict = {
-    "": "colloct_arana_coin.png"
+    "colloct_arana_coin": "colloct_arana_coin.png", # 收取
+    "arana_battle_history": "arana_battle_history.png", # 对战覆历(竞技场)
+    "arana_defend_setting": "arana_defend_setting.png", # 防守设定(竞技场)
+    "pricess_arana_battle_history": "pricess_arana_battle_history.png", # 对战覆历(公主竞技场)
+    "pricess_defend_setting": "pricess_defend_setting.png", # 防守设定(公主竞技场)
+    "pricess_arana_battle_team_1": "pricess_arana_battle_team_1.png", # 队伍1(公主竞技场)
+    "pricess_arana_battle_team_3": "pricess_arana_battle_team_3.png", # 队伍3(公主竞技场)
 }
 
 # 地下城
