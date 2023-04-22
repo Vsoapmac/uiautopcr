@@ -87,14 +87,14 @@ class TestSearch(ClientBasic):
                 pass
             # 进入探索首页(其次)
             try:
-                wait(Template(self.shot_path + self.__page_dict["going_to_experience_page"], record_pos=(-0.001, 0.216), resolution=(1280, 720), threshold=0.9), timeout=2) # 进入探索首页
-                touch(Template(self.shot_path + self.__page_dict["going_to_experience_page"], record_pos=(-0.001, 0.216), resolution=(1280, 720), threshold=0.9)) # 进入探索首页
+                wait(Template(self.shot_path + self.__page_dict["going_to_search_page"], record_pos=(-0.001, 0.216), resolution=(1280, 720), threshold=0.9), timeout=2) # 进入探索首页
+                touch(Template(self.shot_path + self.__page_dict["going_to_search_page"], record_pos=(-0.001, 0.216), resolution=(1280, 720), threshold=0.9)) # 进入探索首页
             except:
                 pass
-            # TODO:增加进入经验值关卡情况
             # 进入经验值关卡(最后)
             try:
-                pass
+                wait(Template(self.shot_path + self.__page_dict["going_to_experience_page"], record_pos=(-0.001, 0.218), resolution=(1280, 720), threshold=0.9), timeout=2) # 前往经验值关卡
+                touch(Template(self.shot_path + self.__page_dict["going_to_experience_page"], record_pos=(-0.001, 0.218), resolution=(1280, 720), threshold=0.9)) # 前往经验值关卡
             except:
                 pass
             sleep(1)

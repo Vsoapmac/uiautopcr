@@ -7,7 +7,12 @@ class TestArana(ClientBasic):
 
     def test_arana(self, arana_page):
         """竞技场,开始:冒险,结束:冒险"""
-        # TODO:增加防守成功后提示框的取消逻辑
+        try:
+            wait(Template(r"arana_defend_success.png", record_pos=(-0.163, -0.082), resolution=(1280, 720), threshold=0.9), timeout=2) # 防守成功
+            touch(Template(r"arana_defend_success.png", record_pos=(-0.163, -0.082), resolution=(1280, 720))) # 防守成功
+            CommonButton.cancel()
+        except:
+            pass
         # 收取竞技场金币
         touch(Template(self.shot_path + self.__page_dict["colloct_arana_coin"], record_pos=(-0.192, 0.073), resolution=(1280, 720))) # 收取
         try:
@@ -18,6 +23,7 @@ class TestArana(ClientBasic):
             pass
         touch([0.612 * self.w, 0.302 * self.h])  # 点击第一个人
         sleep(2)
+        # TODO:增加全部次数用完之后，无法继续进行的逻辑
         in_coding = False
         try:
             wait(Template(self.shot_path + self.__page_dict["target_in_coding"], record_pos=(-0.005, -0.008), resolution=(1280, 720), threshold=0.9), timeout=2)  # 目标处于冷却时间
@@ -28,7 +34,7 @@ class TestArana(ClientBasic):
             CommonButton.start_battle()
             wait(Template(self.shot_path + page_info.common_button_dict["next"], threshold=0.9, record_pos=(0.351, 0.23), resolution=(1280, 720)), timeout=100)  # 下一步
             touch(Template(self.shot_path + page_info.common_button_dict["next"], threshold=0.9, record_pos=(0.351, 0.23), resolution=(1280, 720)))  # 下一步
-            # TODO:增加进攻成功后，排名晋升提示框的取消逻辑
+            # TODO:增加进攻成功后，排名晋升提示框的取消逻辑(CommonButton.white_comfirm())
         else:
             CommonButton.cancel()
 
@@ -47,6 +53,7 @@ class TestArana(ClientBasic):
             pass
         touch([0.612*self.w,0.302*self.h]) # 点击第一个人
         sleep(2)
+        # TODO:增加全部次数用完之后，无法继续进行的逻辑
         in_coding = False
         try:
             wait(Template(self.shot_path + self.__page_dict["target_in_coding"], record_pos=(-0.005, -0.008), resolution=(1280, 720), threshold=0.9), timeout=2) # 目标处于冷却时间
@@ -60,7 +67,7 @@ class TestArana(ClientBasic):
             CommonButton.start_battle()
             wait(Template(self.shot_path + page_info.common_button_dict["next"], threshold=0.9, record_pos=(0.351, 0.23), resolution=(1280, 720)), timeout=100) # 下一步
             touch(Template(self.shot_path + page_info.common_button_dict["next"], threshold=0.9, record_pos=(0.351, 0.23), resolution=(1280, 720))) # 下一步
-            # TODO:增加进攻成功后，排名晋升提示框的取消逻辑
+            # TODO:增加进攻成功后，排名晋升提示框的取消逻辑(CommonButton.white_comfirm())
         else:
             CommonButton.cancel()
 
@@ -83,4 +90,5 @@ class TestArana(ClientBasic):
             wait(Template(self.shot_path + self.__page_dict["pricess_arana_tag"], threshold=0.9, record_pos=(-0.361, -0.252), resolution=(1280, 720)), timeout=2) # 公主竞技场标签
         except:
             Page.princess_arana_page()
+
 

@@ -54,4 +54,4 @@
 
 # TODO
 
-TestArana、TestSearch、Logger打印输出内容、main模块、完善README.md
+TestArana、Logger打印输出内容、main模块plugins中的内容、完善README.md

@@ -3,3 +3,5 @@ pytest~=7.2.2
 airtest~=1.2.10
 opencv-python~=4.7.0.72
 easyocr~=1.6.2
+pytest-repeat
+pytest-rerunfailures

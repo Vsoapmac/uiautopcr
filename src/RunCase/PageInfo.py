@@ -72,8 +72,9 @@ search_dict = {
     "mana_potion": "mana_potion.png", # mana药水
     "use_two_tickets": "use_two_tickets.png",  # 使用2张
     "skip_and_finish": "skip_and_finish.png",  # 跳过完毕
-    "going_to_mana_page": "going_to_mana_page.png",  # 跳过完毕
-    "going_to_experience_page": "going_to_experience_page.png",  # 跳过完毕
+    "going_to_mana_page": "going_to_mana_page.png",  # 前往玛娜关卡
+    "going_to_experience_page": "going_to_experience_page.png",  # 前往经验值关卡
+    "going_to_search_page": "going_to_search_page.png",  # 前往经验值关卡
 }
 
 # 调查
@@ -99,6 +100,7 @@ arana_dict = {
     "pricess_arana_tag": "pricess_arana_tag.png", # 公主竞技场标签
     "colloct_arana_coin": "colloct_arana_coin.png", # 收取
     "target_in_coding": "target_in_coding.png", # 目标处于冷却时间
+    "arana_defend_success": "arana_defend_success.png", # 防守成功(竞技场)
     "arana_battle_history": "arana_battle_history.png", # 对战覆历(竞技场)
     "arana_defend_setting": "arana_defend_setting.png", # 防守设定(竞技场)
     "pricess_arana_battle_history": "pricess_arana_battle_history.png", # 对战覆历(公主竞技场)
