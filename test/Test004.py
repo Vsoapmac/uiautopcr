@@ -1,11 +1,6 @@
-from datetime import datetime
+import os
 
-
-start_timer = "12:31"
-now = datetime.now()
-year_month_day = now.strftime("%Y-%m-%d")
-end = datetime.strptime(year_month_day + " " + start_timer,"%Y-%m-%d %H:%M")
-print(now)
-print(end)
-d = end - now
-print(d.seconds)
+path = "../resources/scriptshot/"
+with os.scandir(path) as dir_entitys:
+    for entity in dir_entitys:
+        print(entity.name)
