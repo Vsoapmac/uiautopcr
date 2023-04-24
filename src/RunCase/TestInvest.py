@@ -137,7 +137,7 @@ class TestInvest(ClientBasic):
             """
             没有次数则跳过
             """
-            logging.info("没有扫荡次数，取消")
+            logging.info("没有扫荡次数，返回")
             CommonButton.cancel()
             sleep(1)
         logging.info("取消当前页面")
