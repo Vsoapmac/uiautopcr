@@ -5,7 +5,7 @@ from Utils.PathUtils import PathUtils
 
 class LoggerUtils:
     """log公共类"""
-    logger = logging.getLogger("Loggername")  # 用该变量使用 log 模块
+    logger = logging.getLogger("uiautopcr")  # 用该变量使用 log 模块
 
     @classmethod
     def setAirtestLogLevel(cls, level=logging.ERROR):

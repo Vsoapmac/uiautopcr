@@ -1,1 +1,1 @@
-cd src/ & python -m main
+cd src/ & python -m main & pause
