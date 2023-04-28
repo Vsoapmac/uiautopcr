@@ -1,6 +1,19 @@
-import os
+def function(parm1: str,parm2: int,parm3: list):
+    """
+    This is a function to use for function
 
-path = "../resources/scriptshot/"
-with os.scandir(path) as dir_entitys:
-    for entity in dir_entitys:
-        print(entity.name)
+    Args:
+        parm1: param1
+        parm2: param2
+        parm3: param3
+
+    Returns:
+        None
+
+    Examples:
+        >>> is_None = function("1", 1, [1,2,3])
+        None
+        >>> print(is_None == None)
+        True
+    """
+    return None
