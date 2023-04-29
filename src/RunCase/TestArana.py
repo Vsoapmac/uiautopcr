@@ -72,8 +72,14 @@ class TestArana(ClientBasic):
 
     def test_princess_arana(self, princess_arana_page):
         """公主竞技场,开始:冒险,结束:冒险"""
-        # TODO:增加防守成功后提示框的取消逻辑
-        # self.logger.info("检测到防守成功，取消页面")
+        try:
+            wait(Template(r"arana_defend_success.png", record_pos=(-0.168, -0.199), resolution=(1280, 720),
+                          threshold=0.9), timeout=2)  # 防守成功
+            self.logger.info("检测到防守成功，取消页面")
+        except:
+            pass
+        else:
+            CommonButton.cancel()
         # 收取竞技场金币
         self.logger.info("收取公主竞技场金币")
         touch(Template(self.shot_path + self.__page_dict["colloct_arana_coin"], record_pos=(-0.192, 0.073), resolution=(1280, 720)))  # 收取
@@ -120,7 +126,14 @@ class TestArana(ClientBasic):
                 wait(Template(self.shot_path + page_info.common_button_dict["next"], threshold=0.9, record_pos=(0.351, 0.23), resolution=(1280, 720)), timeout=100) # 下一步
                 touch(Template(self.shot_path + page_info.common_button_dict["next"], threshold=0.9, record_pos=(0.351, 0.23), resolution=(1280, 720))) # 下一步
                 self.logger.info("战斗结束")
-                # TODO:增加进攻成功后，排名晋升提示框的取消逻辑(CommonButton.white_comfirm())
+                try:
+                    wait(Template(self.shot_path + self.__page_dict["arana_rank_promot"], threshold=0.9,
+                                  record_pos=(-0.099, 0.113), resolution=(1280, 720)), timeout=2)  # 排名晋升
+                    self.logger.info("排名晋升，取消页面")
+                except:
+                    pass
+                else:
+                    CommonButton.white_comfirm()
             else:
                 self.logger.info("公主竞技场正在冷却中，返回")
                 CommonButton.cancel()
