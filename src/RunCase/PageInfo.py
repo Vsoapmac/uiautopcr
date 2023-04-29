@@ -5,7 +5,7 @@ common_button_dict = {
     "cancel": "cancel.png",  # 取消
     "close": "close.png",  # 关闭
     "skip": "skip.png",  # 跳过
-    "start_battle": "start_battle.png", # 战斗开始
+    "start_battle": "start_battle.png",  # 战斗开始
     "white_comfirm": "white_comfirm.png",  # 白色确认按钮
     "blue_comfirm": "blue_comfirm.png",  # 蓝色确认按钮
 }
@@ -68,8 +68,8 @@ shop_dict = {
 search_dict = {
     "experience": "experience_page.png",  # 经验值关卡
     "mana": "mana_page.png",  # mana关卡
-    "experience_potion": "experience_potion.png", # 经验值药水
-    "mana_potion": "mana_potion.png", # mana药水
+    "experience_potion": "experience_potion.png",  # 经验值药水
+    "mana_potion": "mana_potion.png",  # mana药水
     "use_two_tickets": "use_two_tickets.png",  # 使用2张
     "skip_and_finish": "skip_and_finish.png",  # 跳过完毕
     "going_to_mana_page": "going_to_mana_page.png",  # 前往玛娜关卡
@@ -96,19 +96,19 @@ invest_dict = {
 
 # 竞技场、公主竞技场
 arana_dict = {
-    "arana_tag": "arana_tag.png", # 竞技场标签
-    "pricess_arana_tag": "pricess_arana_tag.png", # 公主竞技场标签
-    "colloct_arana_coin": "colloct_arana_coin.png", # 收取
-    "target_in_coding": "target_in_coding.png", # 目标处于冷却时间
-    "challenge_count_maximum_limit": "challenge_count_maximum_limit.png", # 今天的挑战次数已经达到上限
-    "arana_rank_promot": "arana_rank_promot.png", # 等级晋升(竞技场)
-    "arana_defend_success": "arana_defend_success.png", # 防守成功(竞技场)
-    "arana_battle_history": "arana_battle_history.png", # 对战覆历(竞技场)
-    "arana_defend_setting": "arana_defend_setting.png", # 防守设定(竞技场)
-    "pricess_arana_battle_history": "pricess_arana_battle_history.png", # 对战覆历(公主竞技场)
-    "pricess_defend_setting": "pricess_defend_setting.png", # 防守设定(公主竞技场)
-    "pricess_arana_battle_team_1": "pricess_arana_battle_team_1.png", # 队伍1(公主竞技场)
-    "pricess_arana_battle_team_3": "pricess_arana_battle_team_3.png", # 队伍3(公主竞技场)
+    "arana_tag": "arana_tag.png",  # 竞技场标签
+    "pricess_arana_tag": "pricess_arana_tag.png",  # 公主竞技场标签
+    "colloct_arana_coin": "colloct_arana_coin.png",  # 收取
+    "target_in_coding": "target_in_coding.png",  # 目标处于冷却时间
+    "challenge_count_maximum_limit": "challenge_count_maximum_limit.png",  # 今天的挑战次数已经达到上限
+    "arana_rank_promot": "arana_rank_promot.png",  # 等级晋升(竞技场)
+    "arana_defend_success": "arana_defend_success.png",  # 防守成功(竞技场)
+    "arana_battle_history": "arana_battle_history.png",  # 对战覆历(竞技场)
+    "arana_defend_setting": "arana_defend_setting.png",  # 防守设定(竞技场)
+    "pricess_arana_battle_history": "pricess_arana_battle_history.png",  # 对战覆历(公主竞技场)
+    "pricess_defend_setting": "pricess_defend_setting.png",  # 防守设定(公主竞技场)
+    "pricess_arana_battle_team_1": "pricess_arana_battle_team_1.png",  # 队伍1(公主竞技场)
+    "pricess_arana_battle_team_3": "pricess_arana_battle_team_3.png",  # 队伍3(公主竞技场)
 }
 
 # 地下城
