@@ -19,10 +19,12 @@ class LoggerUtils:
         logger.setLevel(level)
 
     @classmethod
-    def setBasicLoggingSettings(cls, level=logging.INFO, is_print_log=True, is_write_log=False):
+    def setBasicLoggingSettings(cls, log_path: str, encoding="UTF-8", level=logging.INFO, is_print_log=True, is_write_log=False):
         """
         基础的Log设置
 
+        :param log_path: log日志文件保存目录
+        :param encoding: log文件的字节编码，默认UTF-8
         :param level: log的level，默认INFO
         :param is_print_log: 是否打印log文件，默认True
         :param is_write_log: 是否写入log文件，默认false
@@ -37,14 +39,15 @@ class LoggerUtils:
             year = DataTimeUtils.getTimeByPattern(DataTimeUtils.YEAR_PATTERN)
             month = DataTimeUtils.getTimeByPattern(DataTimeUtils.MONTH_PATTERN)
             # 检测 Log 文件是否存在，不存在则创建
-            path = f"{PathUtils.getResourcesPath()}log/{year}/{month}月/"
+            log_path = log_path+"/" if log_path[-1] != "/" else log_path
+            path = f"{log_path}log/{year}/{month}月/"
             filename = f"{today}.log"
             # 文件夹不存在则创建
-            if (not os.path.exists(path)):
+            if not os.path.exists(path):
                 os.makedirs(path)
             # 文件不存在则创建
-            if (not os.path.exists(path + filename)):
-                with open(path + filename, 'w', encoding="utf-8") as f:
+            if not os.path.exists(path + filename):
+                with open(path + filename, 'w', encoding=encoding) as f:
                     f.close()
             file_handler = logging.FileHandler(path + filename)
             file_handler.setFormatter(formatter)

@@ -21,5 +21,5 @@ class ClientBasic:
     w,h = d.get_current_resolution()
     # 设置logging
     LoggerUtils.setAirtestLogLevel()
-    LoggerUtils.setBasicLoggingSettings(is_write_log=config_dict["log_output"])
+    LoggerUtils.setBasicLoggingSettings(log_path=PathUtils.getOutPutPath(), encoding="GBK", is_write_log=config_dict["log_output"])
     logger = LoggerUtils.logger
