@@ -137,9 +137,15 @@ class Page:
     def princess_arana_page(cls):
         """公主竞技场"""
         cls.adventure_page()
-        touch(Template(cls.__shot_path + cls.__page_dict["princess_arana"], record_pos=(0.36, 0.166),
-                       resolution=(1280, 720)))  # 公主竞技场
+        touch(Template(cls.__shot_path + cls.__page_dict["princess_arana"], record_pos=(0.36, 0.166), resolution=(1280, 720)))  # 公主竞技场
         sleep(3)
+
+    @classmethod
+    def dungeons_page(cls):
+        """地下城"""
+        cls.adventure_page()
+        touch(Template(cls.__shot_path + cls.__page_dict["dungeons_page"], record_pos=(0.415, -0.094), resolution=(1280, 720))) # 地下城
+
 
     @classmethod
     def detect_limit_shop_open(cls, option="buy_all"):
@@ -171,3 +177,4 @@ class Page:
     def detect_union_battle_open(cls):
         """检测是否开启公会战页面"""
         pass
+

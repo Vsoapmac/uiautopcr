@@ -24,7 +24,7 @@ page_dict = {
     "princess_arana": "princess_arana_page.png",  # 公主竞技场
     "department": "department_page.png",  # 公会之家
     "main_menu": "main_menu.png",  # 主菜单
-    "dungeons": "dungeons_page.png",  # 地下城
+    "dungeons_page": "dungeons_page.png",  # 地下城
 }
 
 # 行会
@@ -113,5 +113,8 @@ arana_dict = {
 
 # 地下城
 dungeons_dict = {
-
+    "skip_dungeons_battle": "skip_dungeons_battle.png",  # 跳过
+    "green_dragon_page": "green_dragon_page.png",  # 绿龙的骸岭
+    "city_of_sky_page": "city_of_sky_page.png",  # 收取
+    "skip_and_finish": "skip_and_finish.png",  # 跳过完毕
 }
