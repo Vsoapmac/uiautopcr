@@ -101,10 +101,11 @@ arana_dict = {
     "colloct_arana_coin": "colloct_arana_coin.png",  # 收取
     "target_in_coding": "target_in_coding.png",  # 目标处于冷却时间
     "challenge_count_maximum_limit": "challenge_count_maximum_limit.png",  # 今天的挑战次数已经达到上限
-    "arana_defend_success": "arana_defend_success.png",  # 防守成功
     "arana_rank_promot": "arana_rank_promot.png",  # 等级晋升
+    "arana_defend_success": "arana_defend_success.png",  # 防守成功(竞技场)
     "arana_battle_history": "arana_battle_history.png",  # 对战覆历(竞技场)
     "arana_defend_setting": "arana_defend_setting.png",  # 防守设定(竞技场)
+    "pricess_arana_defend_success": "pricess_arana_defend_success.png",  # 防守成功(公主竞技场)
     "pricess_arana_battle_history": "pricess_arana_battle_history.png",  # 对战覆历(公主竞技场)
     "pricess_defend_setting": "pricess_defend_setting.png",  # 防守设定(公主竞技场)
     "pricess_arana_battle_team_1": "pricess_arana_battle_team_1.png",  # 队伍1(公主竞技场)

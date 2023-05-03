@@ -73,8 +73,7 @@ class TestArana(ClientBasic):
     def test_princess_arana(self, princess_arana_page):
         """公主竞技场,开始:冒险,结束:冒险"""
         try:
-            wait(Template(r"arana_defend_success.png", record_pos=(-0.168, -0.199), resolution=(1280, 720),
-                          threshold=0.9), timeout=2)  # 防守成功
+            wait(Template(self.shot_path + self.__page_dict["pricess_arana_defend_success"], record_pos=(-0.165, -0.201), resolution=(1280, 720), threshold=0.9), timeout=2)  # 防守成功
             self.logger.info("检测到防守成功，取消页面")
         except:
             pass
