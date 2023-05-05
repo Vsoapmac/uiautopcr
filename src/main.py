@@ -44,7 +44,8 @@ if start_timer!=False:
     year_month_day = now.strftime("%Y-%m-%d")
     end = datetime.strptime(year_month_day + " " + start_timer, "%Y-%m-%d %H:%M")
     d = end - now
-    time.sleep(d.seconds)
+    if d.days >= 0:
+        time.sleep(d.seconds)
 # 开始运行
 pytest.main(pytest_param_list)
 # 运行结束
