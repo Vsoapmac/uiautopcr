@@ -119,3 +119,9 @@ dungeons_dict = {
     "city_of_sky_page": "city_of_sky_page.png",  # 收取
     "skip_and_finish": "skip_and_finish.png",  # 跳过完毕
 }
+
+# 插件
+plugins_dict = {
+    "reliability_new_content": "reliability_new_content.png",  # 新内容(信赖度)
+    "reliability_none_voice": "reliability_none_voice.png",  # 无语音(信赖度)
+}
