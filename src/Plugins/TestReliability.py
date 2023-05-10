@@ -23,3 +23,4 @@ class TestReliability(ClientBasic):
                 touch([0.501 * self.w, 0.417 * self.h])  # 中间
                 sleep(2)
             self.logger.info("信赖度对话完毕")
+        sleep(2)

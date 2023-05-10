@@ -9,7 +9,7 @@ log_output: false # 是否将日志写入文件
 shutdown_when_finish: false # 运行完毕后是否关机
 # 定时运行，不定时则输入false，定时则输入时间，格式%H:%M(24小时)，如18:13，程序在这个时间后执行模块(需要加引号)，若设置的定时时间小于当前时间，则不定时直接开始
 start_timer: false
-rerun_if_faile: 0 # 运行失败后重新运行次数
+rerun_if_fail: 0 # 运行失败后重新运行次数
 run_model_list: # 运行的模块列表，注意先后顺序
     - 任务
     - 工会之家
@@ -21,7 +21,9 @@ run_model_list: # 运行的模块列表，注意先后顺序
     - 任务
     - 礼物
 
-# 其他设置
-run_plugins: false # 运行其他插件模块(此操作不会运行run_model中的模块和调用运行设置中的设置)
-plugins_model: # 运行的插件模块列表
-    - pass_map
+# 插件模块设置
+run_plugins: false # 运行其他插件模块(开启后，不会运行主要模块)
+plugins_run_times: 1 # 插件模块运行次数
+# 需要运行的插件模块，以下是可运行的插件
+# 信赖度
+plugins_model: 信赖度
