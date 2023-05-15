@@ -141,25 +141,34 @@ class TestArana(ClientBasic):
     def arana_page(self):
         """竞技场"""
         self.logger.info("开始进入竞技场页面")
+        is_in_page = False
         try:
             wait(Template(self.shot_path + self.__page_dict["arana_battle_history"], record_pos=(-0.384, 0.164), resolution=(1280, 720), threshold=0.9), timeout=2) # 对战覆历
             wait(Template(self.shot_path + self.__page_dict["arana_defend_setting"], record_pos=(-0.231, 0.165), resolution=(1280, 720), threshold=0.9), timeout=2) # 防守设定
             wait(Template(self.shot_path + self.__page_dict["arana_tag"], threshold=0.9, record_pos=(-0.362, -0.252), resolution=(1280, 720)), timeout=2) # 竞技场标签
             self.logger.info("检测到已经在公主竞技场页面，无需进入")
+            is_in_page = True
         except:
             Page.arana_page()
+        # 对进入页面进行二次检测，防止进入因为加载导致点击失效
+        if not is_in_page:
+            wait(Template(self.shot_path + self.__page_dict["arana_tag"], threshold=0.9, record_pos=(-0.362, -0.252), resolution=(1280, 720)), timeout=100) # 竞技场标签
             self.logger.info("进入竞技场完毕")
 
     @pytest.fixture
     def princess_arana_page(self):
         """公主竞技场"""
         self.logger.info("开始进入公主竞技场页面")
+        is_in_page = False
         try:
             wait(Template(self.shot_path + self.__page_dict["pricess_arana_battle_history"], record_pos=(-0.385, 0.175), resolution=(1280, 720), threshold=0.9), timeout=2)  # 对战覆历
             wait(Template(self.shot_path + self.__page_dict["pricess_defend_setting"], record_pos=(-0.231, 0.175), resolution=(1280, 720), threshold=0.9), timeout=2)  # 防守设定
             wait(Template(self.shot_path + self.__page_dict["pricess_arana_tag"], threshold=0.9, record_pos=(-0.361, -0.252), resolution=(1280, 720)), timeout=2) # 公主竞技场标签
             self.logger.info("检测到已经在公主竞技场页面，无需进入")
+            is_in_page = True
         except:
             Page.princess_arana_page()
+        # 对进入页面进行二次检测，防止进入因为加载导致点击失效
+        if not is_in_page:
+            wait(Template(self.shot_path + self.__page_dict["pricess_arana_tag"], threshold=0.9, record_pos=(-0.361, -0.252), resolution=(1280, 720)), timeout=100)  # 公主竞技场标签
             self.logger.info("进入公主竞技场完毕")
-
