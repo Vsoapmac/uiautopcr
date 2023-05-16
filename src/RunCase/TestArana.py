@@ -8,7 +8,7 @@ class TestArana(ClientBasic):
     def test_arana(self, arana_page):
         """竞技场,开始:冒险,结束:冒险"""
         try:
-            wait(Template(r"arana_defend_success.png", record_pos=(-0.163, -0.082), resolution=(1280, 720), threshold=0.9), timeout=2) # 防守成功
+            wait(Template(self.shot_path + self.__page_dict["arana_defend_success"], record_pos=(-0.163, -0.082), resolution=(1280, 720), threshold=0.9), timeout=2) # 防守成功
             self.logger.info("检测到防守成功，取消页面")
         except:
             pass
@@ -152,8 +152,16 @@ class TestArana(ClientBasic):
             Page.arana_page()
         # 对进入页面进行二次检测，防止进入因为加载导致点击失效
         if not is_in_page:
-            wait(Template(self.shot_path + self.__page_dict["arana_tag"], threshold=0.9, record_pos=(-0.362, -0.252), resolution=(1280, 720)), timeout=100) # 竞技场标签
-            self.logger.info("进入竞技场完毕")
+            try:
+                wait(Template(self.shot_path + self.__page_dict["arana_tag"], threshold=0.9, record_pos=(-0.362, -0.252), resolution=(1280, 720)), timeout=10) # 竞技场标签
+                self.logger.info("进入竞技场完毕")
+            except:
+                try:
+                    wait(Template(self.shot_path + self.__page_dict["arana_defend_success"], record_pos=(-0.163, -0.082), resolution=(1280, 720), threshold=0.9), timeout=10)  # 防守成功
+                    self.logger.info("进入竞技场完毕")
+                except:
+                    self.logger.error("进入竞技场失败")
+                    raise Exception("进入竞技场失败")
 
     @pytest.fixture
     def princess_arana_page(self):
@@ -170,5 +178,13 @@ class TestArana(ClientBasic):
             Page.princess_arana_page()
         # 对进入页面进行二次检测，防止进入因为加载导致点击失效
         if not is_in_page:
-            wait(Template(self.shot_path + self.__page_dict["pricess_arana_tag"], threshold=0.9, record_pos=(-0.361, -0.252), resolution=(1280, 720)), timeout=100)  # 公主竞技场标签
-            self.logger.info("进入公主竞技场完毕")
+            try:
+                wait(Template(self.shot_path + self.__page_dict["pricess_arana_tag"], threshold=0.9, record_pos=(-0.361, -0.252), resolution=(1280, 720)), timeout=10)  # 公主竞技场标签
+                self.logger.info("进入公主竞技场完毕")
+            except:
+                try:
+                    wait(Template(self.shot_path + self.__page_dict["pricess_arana_defend_success"], record_pos=(-0.165, -0.201), resolution=(1280, 720), threshold=0.9), timeout=10)  # 防守成功
+                    self.logger.info("进入公主竞技场完毕")
+                except:
+                    self.logger.error("进入公主竞技场失败")
+                    raise Exception("进入公主竞技场失败")
