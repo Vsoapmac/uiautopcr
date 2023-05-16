@@ -10,7 +10,7 @@ class TestDepartment(ClientBasic):
         self.logger.info("收取工会之家的全部体力和其他物品")
         touch(Template(self.shot_path + self.__page_dict["collect_all_deparment_strength"], record_pos=(0.437, 0.162), resolution=(1280, 720))) # 全部收取
         try:
-            wait(Template(self.shot_path+page_info.common_button_dict["close"], threshold=0.9, record_pos=(0.0, 0.218), resolution=(1280, 720)),timeout=3) # 关闭
+            wait(Template(self.shot_path+page_info.common_button_dict["close"], threshold=0.9, record_pos=(0.0, 0.218), resolution=(1280, 720)), timeout=5) # 关闭
             touch(Template(self.shot_path+page_info.common_button_dict["close"], threshold=0.9, record_pos=(0.0, 0.218), resolution=(1280, 720))) # 关闭
             self.logger.info("收集完毕")
             sleep(1)

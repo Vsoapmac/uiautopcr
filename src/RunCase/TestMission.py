@@ -40,7 +40,8 @@ class TestMission(ClientBasic):
                        resolution=(1280, 720)))  # 全部收取
         try:
             wait(Template(self.shot_path + page_info.common_button_dict["close"], threshold=0.9, record_pos=(0.0, 0.218),
-                         resolution=(1280, 720)), timeout=3)  # 关闭
+                         resolution=(1280, 720)), timeout=10)  # 关闭
+            sleep(2)
             touch(Template(self.shot_path + page_info.common_button_dict["close"], threshold=0.9, record_pos=(0.0, 0.218),
                          resolution=(1280, 720)))  # 关闭
             self.logger.info("收取奖励完毕")

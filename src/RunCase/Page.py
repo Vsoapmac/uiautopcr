@@ -155,7 +155,7 @@ class Page:
         :param option: 开启限定商城后的操作
         """
         try:
-            wait(Template(cls.__shot_path+page_info.shop_dict["limit_shop_open"], record_pos=(-0.01, -0.193), resolution=(1280, 720), threshold=0.9),timeout=2) # 限定商店开启
+            wait(Template(cls.__shot_path+page_info.shop_dict["limit_shop_open"], record_pos=(-0.01, -0.193), resolution=(1280, 720), threshold=0.9), timeout=5) # 限定商店开启
             if option == "buy_all":
                 touch(Template(cls.__shot_path+page_info.shop_dict["click_all_limit_shop"], record_pos=(0.183, -0.152), resolution=(1280, 720), threshold=0.9)) # 点击全部
                 sleep(1)
