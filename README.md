@@ -80,7 +80,7 @@ Android SDK是电脑驱动安卓手机或模拟器的主要方式，其中最重
 
 ```yaml
 # 基础设置
-# 真机: UUID。如: 10ACAU0MQX001UX (一般是5037端口，其他也行，能连上手机就行，查看方法是adb devices)
+# 真机: UUID。如: 10ACAU0MQX001UX (一般是5037端口，其他也行，能连上手机就行)
 # 夜神模拟器: 127.0.0.1:62025
 # mumu模拟器: 127.0.0.1:7555
 client_url: 127.0.0.1:62025 # 设备连接UUID或url
@@ -104,10 +104,10 @@ run_model_list: # 运行的模块列表，注意先后顺序
 
 # 插件模块设置
 run_plugins: false # 运行其他插件模块(开启后，不会运行主要模块)
-plugins_run_times: 1 # 插件模块运行次数
+plugins_run_times: 10 # 插件模块运行次数
 # 需要运行的插件模块，以下是可运行的插件
-# 信赖度
-plugins_model: 信赖度
+# 信赖度, 普通过图
+plugins_model: 普通过图
 ```
 
 # 开发者提示
