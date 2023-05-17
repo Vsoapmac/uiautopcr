@@ -21,7 +21,7 @@ plugins_model = config_dict["plugins_model"]
 pytest_param_list = ["-s"]
 # 副参数
 if rerun_if_fail != 0:
-    pytest_param_list.append("--reruns=" + rerun_if_fail)
+    pytest_param_list.append(f"--reruns={rerun_if_fail}")
 # 判断是否开启插件运行
 if not run_plugins:
     run_case_path = PathUtils.getRunCasePath()
@@ -32,7 +32,7 @@ elif run_plugins:
     plugins_path = PathUtils.getPluginsPath()
     # 运行次数
     if plugins_run_times > 1:
-        pytest_param_list.append("--count=" + plugins_run_times)
+        pytest_param_list.append(f"--count={plugins_run_times}")
     # pytest模块
     pytest_param_list.append(plugins_path + mapper.plugins_model_dict[plugins_model])  # 进行模块映射并与地址一起存进list中
 """

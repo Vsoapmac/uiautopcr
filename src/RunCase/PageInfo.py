@@ -32,8 +32,8 @@ page_dict = {
 # 公会之家
 department_dict = {
     "collect_all_deparment_strength": "collect_all_deparment_strength.png",  # 全部收取
-    "deparment_level_2": "deparment_level_2.png",  # 全部收取
-    "deparment_level_3": "deparment_level_3.png",  # 全部收取
+    "deparment_level_2": "deparment_level_2.png",  # 第二层公寓
+    "deparment_level_3": "deparment_level_3.png",  # 第三层公寓
 }
 
 # 任务
@@ -124,4 +124,7 @@ dungeons_dict = {
 plugins_dict = {
     "reliability_new_content": "reliability_new_content.png",  # 新内容(信赖度)
     "reliability_none_voice": "reliability_none_voice.png",  # 无语音(信赖度)
+    "map_character": "map_character.png",  # 人物角色图(普通过图)
+    "challenge_map": "challenge_map.png",  # 挑战(普通过图)
+    "next_step": "next_step.png",  # 下一步(普通过图)
 }

@@ -11,5 +11,6 @@ main_model_dict = {
 }
 
 plugins_model_dict = {
-    "信赖度": "TestReliability.py"
+    "信赖度": "TestReliability.py",
+    "普通过图": "TestPassMap.py",
 }
