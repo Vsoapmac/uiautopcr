@@ -18,7 +18,7 @@ class TestArana(ClientBasic):
         self.logger.info("收取竞技场金币")
         touch(Template(self.shot_path + self.__page_dict["colloct_arana_coin"], record_pos=(-0.192, 0.073), resolution=(1280, 720))) # 收取
         try:
-            wait(Template(self.shot_path + page_info.common_button_dict["white_comfirm"], threshold=0.9, record_pos=(-0.001, 0.216), resolution=(1280, 720)), timeout=2)  # 白色确认按钮
+            wait(Template(self.shot_path + page_info.common_button_dict["white_comfirm"], threshold=0.9, record_pos=(-0.001, 0.216), resolution=(1280, 720)), timeout=5)  # 白色确认按钮
             touch(Template(self.shot_path + page_info.common_button_dict["white_comfirm"], threshold=0.9, record_pos=(-0.001, 0.216), resolution=(1280, 720)))  # 白色确认按钮
             sleep(2)
             self.logger.info("收取竞技场金币完成")
@@ -84,7 +84,7 @@ class TestArana(ClientBasic):
         touch(Template(self.shot_path + self.__page_dict["colloct_arana_coin"], record_pos=(-0.192, 0.073), resolution=(1280, 720)))  # 收取
         try:
             wait(Template(self.shot_path + page_info.common_button_dict["white_comfirm"], threshold=0.9, record_pos=(-0.001, 0.216),
-                         resolution=(1280, 720)), timeout=2) # 白色确认按钮
+                         resolution=(1280, 720)), timeout=5) # 白色确认按钮
             touch(Template(self.shot_path + page_info.common_button_dict["white_comfirm"], threshold=0.9, record_pos=(-0.001, 0.216),
                          resolution=(1280, 720))) # 白色确认按钮
             sleep(2)
