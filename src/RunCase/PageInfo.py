@@ -127,4 +127,7 @@ plugins_dict = {
     "map_character": "map_character.png",  # 人物角色图(普通过图)
     "challenge_map": "challenge_map.png",  # 挑战(普通过图)
     "next_step": "next_step.png",  # 下一步(普通过图)
+    "pass_level_team": "pass_level_team.png",  # 通关队伍(露娜塔)
+    "use_luna_pass_team": "use_luna_pass_team.png",  # 使用(露娜塔)
+    "use_luna_pass_team_to_fight": "use_luna_pass_team_to_fight.png",  # 在实战中使用(露娜塔)
 }
