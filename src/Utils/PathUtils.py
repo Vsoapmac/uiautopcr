@@ -22,8 +22,9 @@ class PathUtils:
     def getRootPath(cls):
         """
         获取项目根目录绝对路径
-        
-        :return: 项目根目录绝对路径
+
+        Returns:
+            项目根目录绝对路径
         """
         # 获取project_name
         project_name = "uiautopcr"
@@ -38,7 +39,8 @@ class PathUtils:
         """
         获取项目config文件夹绝对路径
 
-        :return: config文件夹绝对路径
+        Returns:
+            config文件夹绝对路径
         """
         root = cls.getRootPath()
         return root + "config/"
@@ -48,7 +50,8 @@ class PathUtils:
         """
         获取项目output文件夹绝对路径
 
-        :return: output文件夹绝对路径
+        Returns:
+            output文件夹绝对路径
         """
         root = cls.getRootPath()
         return root + "output/"
@@ -58,7 +61,8 @@ class PathUtils:
         """
         获取项目resources文件夹绝对路径
 
-        :return: resources文件夹绝对路径
+        Returns:
+            resources文件夹绝对路径
         """
         root = cls.getRootPath()
         return root + "resources/"
@@ -68,7 +72,8 @@ class PathUtils:
         """
         获取项目scriptshot文件夹绝对路径
 
-        :return: scriptshot文件夹绝对路径
+        Returns:
+            scriptshot文件夹绝对路径
         """
         resources_path = cls.getResourcesPath()
         return resources_path + "scriptshot/"
@@ -78,7 +83,8 @@ class PathUtils:
         """
         获取项目RunCase文件夹绝对路径
 
-        :return: RunCase文件夹绝对路径
+        Returns:
+            RunCase文件夹绝对路径
         """
         root = cls.getRootPath()
         return root + "src/RunCase/"
@@ -88,7 +94,8 @@ class PathUtils:
         """
         获取项目Plugins文件夹绝对路径
 
-        :return: Plugins文件夹绝对路径
+        Returns:
+            Plugins文件夹绝对路径
         """
         root = cls.getRootPath()
         return root + "src/Plugins/"

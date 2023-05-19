@@ -12,8 +12,8 @@ class LoggerUtils:
         """
         设置airtest显示log的level
 
-        :param level: log等级，默认error
-        :return:
+        Args:
+            level: log等级，默认error
         """
         logger = logging.getLogger("airtest")
         logger.setLevel(level)
@@ -23,12 +23,17 @@ class LoggerUtils:
         """
         基础的Log设置
 
-        :param log_path: log日志文件保存目录
-        :param encoding: log文件的字节编码，默认UTF-8
-        :param level: log的level，默认INFO
-        :param is_print_log: 是否打印log文件，默认True
-        :param is_write_log: 是否写入log文件，默认false
-        :return:
+        Args:
+            log_path: log日志文件保存目录
+            encoding: log文件的字节编码，默认UTF-8
+            level: log的level，默认INFO
+            is_print_log: 是否打印log文件，默认True
+            is_write_log: 是否写入log文件，默认false
+
+        Examples:
+            >>> LoggerUtils.setBasicLoggingSettings(log_path = "./", is_write_log=True)
+            >>> logger = LoggerUtils.logger
+            >>> logger.info("test")
         """
         ## 写入 Log 的基础设置
         formatter = logging.Formatter('%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
