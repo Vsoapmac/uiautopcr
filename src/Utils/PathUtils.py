@@ -6,6 +6,19 @@ class PathUtils:
     """文件目录工具类"""
 
     @classmethod
+    def transferPathUrl(cls, file_path: str) -> str:
+        """
+        将文件路径中的\转换成/，一般用于兼容linux、windows等平台
+
+        Args:
+            file_path: 文件路径
+
+        Returns:
+            转换后的文件路径
+        """
+        return file_path.replace("\\","/") if file_path[-1] != "/" or file_path[-1] != "\\" else file_path.replace("\\","/") + "/"
+
+    @classmethod
     def getRootPath(cls):
         """
         获取项目根目录绝对路径

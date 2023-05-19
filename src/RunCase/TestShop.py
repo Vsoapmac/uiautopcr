@@ -34,7 +34,7 @@ class TestShop(ClientBasic):
     def __buy_batch_goods(self):
         """批量购入"""
         try:
-            wait(Template(self.shot_path + self.__page_dict["buy_batch_goods"], record_pos=(0.279, 0.174), resolution=(1280, 720)), timeout=2)  # 批量购入
+            wait(Template(self.shot_path + self.__page_dict["buy_batch_goods"], record_pos=(0.279, 0.174), resolution=(1280, 720)), timeout=3)  # 批量购入
             touch(Template(self.shot_path + self.__page_dict["buy_batch_goods"], record_pos=(0.279, 0.174), resolution=(1280, 720)))  # 批量购入
             sleep(1)
             self.logger.info("批量购买商品")
@@ -50,8 +50,8 @@ class TestShop(ClientBasic):
         """商店"""
         self.logger.info("进入商店页面")
         try:
-            wait(Template(self.shot_path + self.__page_dict["select_all_goods"], record_pos=(0.221, -0.149), resolution=(1280, 720), threshold=0.9), timeout=2)  # 全部
-            wait(Template(self.shot_path + self.__page_dict["chose_all_goods"], record_pos=(0.395, -0.152), resolution=(1280, 720), threshold=0.9), timeout=2)  # 全选
+            wait(Template(self.shot_path + self.__page_dict["select_all_goods"], record_pos=(0.221, -0.149), resolution=(1280, 720), threshold=0.9), timeout=3)  # 全部
+            wait(Template(self.shot_path + self.__page_dict["chose_all_goods"], record_pos=(0.395, -0.152), resolution=(1280, 720), threshold=0.9), timeout=3)  # 全选
             self.logger.info("检测到已进入页面，无需再次进入页面")
         except:
             Page.shop_page()

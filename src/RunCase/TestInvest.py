@@ -52,7 +52,7 @@ class TestInvest(ClientBasic):
         # 首先检测是否在里面了
         is_in_page = True
         try:
-            wait(Template(self.shot_path + self.__page_dict["piece_of_heart"], record_pos=(0.075, -0.13), resolution=(1280, 720), threshold=0.9), timeout=2) # 心碎图片
+            wait(Template(self.shot_path + self.__page_dict["piece_of_heart"], record_pos=(0.075, -0.13), resolution=(1280, 720), threshold=0.9), timeout=3) # 心碎图片
             self.logger.info("检测到已经在圣迹调查页面，无需进入")
         except:
             is_in_page = False
@@ -61,9 +61,9 @@ class TestInvest(ClientBasic):
             # 做一个稳定性检测，在调查页面里面就直接进去
             try:
                 wait(Template(self.shot_path + self.__page_dict["temple"], record_pos=(0.341, 0.064),
-                              resolution=(1280, 720), threshold=0.9), timeout=2)  # 神殿调查
+                              resolution=(1280, 720), threshold=0.9), timeout=3)  # 神殿调查
                 wait(Template(self.shot_path + self.__page_dict["miracle"], record_pos=(0.11, 0.065),
-                              resolution=(1280, 720), threshold=0.9), timeout=2)  # 圣迹调查
+                              resolution=(1280, 720), threshold=0.9), timeout=3)  # 圣迹调查
             except:
                 self.logger.info("检测到不在调查页面，开始进入调查页面")
                 Page.invest_page()  # 否则进入调查页面，再进去
@@ -79,7 +79,7 @@ class TestInvest(ClientBasic):
         # 首先检测是否在里面了
         is_in_page = True
         try:
-            wait(Template(self.shot_path + self.__page_dict["cup_of_stars"], record_pos=(0.08, -0.127), resolution=(1280, 720), threshold=0.9), timeout=2) # 星球杯图片
+            wait(Template(self.shot_path + self.__page_dict["cup_of_stars"], record_pos=(0.08, -0.127), resolution=(1280, 720), threshold=0.9), timeout=3) # 星球杯图片
             self.logger.info("检测到已经在神殿调查页面，无需进入")
         except:
             is_in_page = False
@@ -87,8 +87,8 @@ class TestInvest(ClientBasic):
         if not is_in_page:
             # 做一个稳定性检测，在调查页面里面就直接进去
             try:
-                wait(Template(self.shot_path + self.__page_dict["miracle"], record_pos=(0.11, 0.065), resolution=(1280, 720), threshold=0.9), timeout=2)  # 圣迹调查
-                wait(Template(self.shot_path + self.__page_dict["temple"], record_pos=(0.341, 0.064), resolution=(1280, 720), threshold=0.9), timeout=2)  # 神殿调查
+                wait(Template(self.shot_path + self.__page_dict["miracle"], record_pos=(0.11, 0.065), resolution=(1280, 720), threshold=0.9), timeout=3)  # 圣迹调查
+                wait(Template(self.shot_path + self.__page_dict["temple"], record_pos=(0.341, 0.064), resolution=(1280, 720), threshold=0.9), timeout=3)  # 神殿调查
             except:
                 self.logger.info("检测到不在调查页面，开始进入调查页面")
                 Page.invest_page()  # 否则进入调查页面，再进去
@@ -111,7 +111,7 @@ class TestInvest(ClientBasic):
         has_remain = True
         try:
             wait(Template(self.shot_path + self.__page_dict["remain_challenge_zero"], record_pos=(-0.004, -0.016),
-                          resolution=(1280, 720)),timeout=2)  # 剩余挑战次数为0
+                          resolution=(1280, 720)),timeout=3)  # 剩余挑战次数为0
             has_remain = False
         except:
             pass

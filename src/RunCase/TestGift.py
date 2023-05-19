@@ -12,6 +12,7 @@ class TestGift(ClientBasic):
             sleep(1)
             touch(Template(self.shot_path + self.__page_dict["cancel_check_with_gift_energy"], record_pos=(-0.124, 0.214), resolution=(1280, 720))) # 取消勾选
             self.logger.info("取消勾选")
+            sleep(1)
         except:
             pass
         touch(Template(self.shot_path + self.__page_dict["collect_all_mission_reward"], record_pos=(0.341, 0.215), resolution=(1280, 720))) # 全部收取
