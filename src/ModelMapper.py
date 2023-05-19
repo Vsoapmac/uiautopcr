@@ -10,6 +10,7 @@ main_model_dict = {
     "地下城": "TestDungeons.py",
 }
 
+# 这里加自定义插件模块
 plugins_model_dict = {
     "信赖度": "TestReliability.py",
     "普通过图": "TestPassMap.py",

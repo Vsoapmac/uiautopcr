@@ -112,4 +112,100 @@ plugins_model: 普通过图
 
 # 开发者提示
 
-如果需要增加额外的插件模块，在Plugins包中增加测试类后，在`ModelMapper.py`中增加`plugins_model_dict`中对应的映射，就可以在设置中配置自定义的模块了
+## 添加新插件模块
+
+如果需要增加额外的插件模块，在Plugins包中增加测试类，测试类的格式为TestXXXX.py，测试方法的格式为`def test_xxxxx(self)`。
+
+整个测试类需要继承`Common.ClientBasic`并且导入`ClientBasic`类中所有的模块，方便使用。例如:
+
+```python
+from Common.ClientBasic import *
+
+
+class TestCustomPlugins(ClientBasic):
+    """自定义插件"""
+    __page_dict = page_info.plugins_dict
+
+    def test_custom_function(self):
+        """自定义插件方法"""
+```
+
+生产的截图，放在`resources/scriptshot`下面，并且在`RunCase.PageInfo`中写入截图与截图映射。
+
+```python
+# 插件
+plugins_dict = {
+    "reliability_new_content": "reliability_new_content.png",  # 新内容(信赖度)
+    "reliability_none_voice": "reliability_none_voice.png",  # 无语音(信赖度)
+    "map_character": "map_character.png",  # 人物角色图(普通过图)
+    "challenge_map": "challenge_map.png",  # 挑战(普通过图)
+    "next_step": "next_step.png",  # 下一步(普通过图)
+    "pass_level_team": "pass_level_team.png",  # 通关队伍(露娜塔)
+    "use_luna_pass_team": "use_luna_pass_team.png",  # 使用(露娜塔)
+    "use_luna_pass_team_to_fight": "use_luna_pass_team_to_fight.png",  # 在实战中使用(露娜塔)
+    "Custom_plugins_page": "custom_page.png",
+}
+```
+
+之后就可以在函数里面写执行方法了，比如说:
+
+```python
+touch(Template(self.shot_path + self.__page_dict["pass_level_team"], record_pos=(0.38, -0.175), resolution=(1280, 720), threshold=0.9)) # 通关队伍
+```
+
+完毕后，在`ModelMapper.py`中增加`plugins_model_dict`中对应的映射，就可以在设置中配置自定义的模块了
+
+```python
+main_model_dict = {
+    "礼物": "TestGift.py",
+    "任务": "TestMission.py",
+    "工会之家": "TestDepartment.py",
+    "商店": "TestShop.py",
+    "探索": "TestSearch.py",
+    "调查": "TestInvest.py",
+    "竞技场": "TestArana.py",
+    "地下城": "TestDungeons.py",
+}
+
+# 这里加自定义插件模块
+plugins_model_dict = {
+    "信赖度": "TestReliability.py",
+    "普通过图": "TestPassMap.py",
+    "露娜塔": "TestLunaTower.py",
+    "自定义插件" : "TestCustomPlugins.py"
+}
+```
+
+在设置中设置自定义插件
+
+```yaml
+# 插件模块设置
+run_plugins: false # 运行其他插件模块(开启后，不会运行主要模块)
+plugins_run_times: 10 # 插件模块运行次数
+# 需要运行的插件模块，以下是可运行的插件
+# 信赖度, 普通过图, 露娜塔
+plugins_model: 自定义插件
+```
+
+## 自定义项目名称
+
+如果想自定义项目名称，需要在`Utils.PathUtils`上面的`getRootPath`函数中修改`project_name`的默认值为自定义值即可
+
+```python
+ @classmethod
+ def getRootPath(cls, project_name="custom_project_name"):
+     """
+     获取项目根目录绝对路径
+     
+     Args:
+         project_name: 项目名称，命名和整个项目一致，默认uiautopcr
+     
+     Returns:
+         项目根目录绝对路径
+     """
+     # 获取根目录
+     parent = pathlib.Path().absolute().parent
+     root = str(parent).replace("\\", "/")
+     root = root[0:root.find(project_name)+len(project_name)] # 不同未知的py文件的父目录是不同的，预防这个情况切割字符串拿到项目根目录
+     return root + "/"
+```

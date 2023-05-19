@@ -19,15 +19,16 @@ class PathUtils:
         return file_path.replace("\\","/") if file_path[-1] != "/" or file_path[-1] != "\\" else file_path.replace("\\","/") + "/"
 
     @classmethod
-    def getRootPath(cls):
+    def getRootPath(cls, project_name="uiautopcr"):
         """
         获取项目根目录绝对路径
+
+        Args:
+            project_name: 项目名称，命名和整个项目一致，默认uiautopcr
 
         Returns:
             项目根目录绝对路径
         """
-        # 获取project_name
-        project_name = "uiautopcr"
         # 获取根目录
         parent = pathlib.Path().absolute().parent
         root = str(parent).replace("\\", "/")
