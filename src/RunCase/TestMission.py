@@ -8,17 +8,17 @@ class TestMission(ClientBasic):
     def test_collect_mission(self, mission_page):
         """领取任务奖励,开始界面: 主页,结束界面: 主页"""
         self.logger.info("收取普通任务奖励")
-        wait(Template(self.shot_path + self.__page_dict["common_mission"], record_pos=(0.066, -0.255), resolution=(1280, 720), threshold=0.9), timeout=3) # 普通
+        wait(Template(self.shot_path + self.__page_dict["common_mission"], record_pos=(0.066, -0.255), resolution=(1280, 720), threshold=0.9), timeout=10) # 普通
         touch(Template(self.shot_path + self.__page_dict["common_mission"], record_pos=(0.066, -0.255), resolution=(1280, 720))) # 普通
         sleep(2)
         self.__collect_mission_reward()
         self.logger.info("收取每日任务奖励")
-        wait(Template(self.shot_path + self.__page_dict["daily_mission"], record_pos=(-0.102, -0.256), resolution=(1280, 720), threshold=0.9), timeout=3) # 每日
+        wait(Template(self.shot_path + self.__page_dict["daily_mission"], record_pos=(-0.102, -0.256), resolution=(1280, 720), threshold=0.9), timeout=10) # 每日
         touch(Template(self.shot_path + self.__page_dict["daily_mission"], record_pos=(-0.102, -0.256), resolution=(1280, 720))) # 每日
         sleep(2)
         self.__collect_mission_reward()
         self.logger.info("收取称号任务奖励")
-        wait(Template(self.shot_path + self.__page_dict["name_mission"], record_pos=(0.235, -0.256), resolution=(1280, 720), threshold=0.9), timeout=3) # 称号
+        wait(Template(self.shot_path + self.__page_dict["name_mission"], record_pos=(0.235, -0.256), resolution=(1280, 720), threshold=0.9), timeout=10) # 称号
         touch(Template(self.shot_path + self.__page_dict["name_mission"], record_pos=(0.235, -0.256), resolution=(1280, 720))) # 称号
         sleep(2)
         self.__collect_mission_reward()
