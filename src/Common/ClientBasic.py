@@ -17,7 +17,7 @@ class ClientBasic:
     # 截图路径
     shot_path = PathUtils.getScriptShotPath()
     # 连接安卓模拟器或真机
-    d = connect_device(f'Android:///{config_dict["client_url"]}')
+    d = init_device(uuid=config_dict["client_url"], cap_method="JAVACAP", ori_method="ADBORI", touch_method="ADBTOUCH")
     w,h = d.get_current_resolution()
     # 设置logging
     LoggerUtils.setAirtestLogLevel()
